@@ -11,8 +11,9 @@ const GObject = imports.gi.GObject;
 const Config = imports.config;
 const Lan = imports.service.backends.lan;
 const PluginBase = imports.service.plugin;
+// this block of code is not part of gsconnect connect extension
 const MountHandler = imports.service.utils.mountInfoHandler;
-
+// end of block
 var Metadata = {
     label: _('SFTP'),
     id: 'org.gnome.Shell.Extensions.GSConnect.Plugin.SFTP',
@@ -120,12 +121,14 @@ var Plugin = GObject.registerClass({
             case 'kdeconnect.sftp':
                 if (packet.body.hasOwnProperty('errorMessage'))
                     this._handleError(packet);
-                else{
+                else{ // if script is editing the file, don't forget to place {} around else
+                    // this block of code is not part of gsconnect connect extension
                     try{
-                        MountHandler.addInfoDconf(packet); // this function is not part of gsconnect connect extension
+                        MountHandler.addInfoDconf(packet);
                     }catch(e){
                         pass
                     }
+                    // end of block
                     this._handleMount(packet);
                 }
                 break;
@@ -149,11 +152,13 @@ var Plugin = GObject.registerClass({
     }
 
     _onMountRemoved(monitor, mount) {
+        // this block of code is not part of gsconnect connect extension
         try{
-            MountHandler.removeBookmark(this._device._id + "/"); // this function is not part of gsconnect connect extension
+            MountHandler.removeBookmark(this._device._id + "/");
         }catch(e){
             pass
         }
+        // end of block
         if (this.gmount !== mount)
             return;
         this._gmount = null;

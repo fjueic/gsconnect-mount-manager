@@ -1,0 +1,13 @@
+# /etc/systemd/user/gsconnect-mount-manager.service
+
+[Unit]
+Description=GSConnect Mount Manager
+After=network.target
+
+[Service]
+ExecStart=python3 {HOME}/.config/gsconnect-mount-manager/run.py
+Restart=always
+RestartSec=5
+
+[Install]
+WantedBy=default.target

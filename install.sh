@@ -1,6 +1,6 @@
 # check if root
-if [ "$EUID" -ne 0 ]
-  then echo "Please run as root"
+if [ "$EUID" -ne 0 ];then
+  echo "Please run as root"
   exit
 fi
 
@@ -28,9 +28,5 @@ python3 ./update_servicefile.py "$USER_HOME" "$script_dir" > /etc/systemd/user/g
 # editing sftp.js in gsconnect extension
 chmod +x ./update_sftp.py
 python3 ./update_sftp.py "$USER_HOME"
-
-# cleaning up
-echo "Cleaning up..."
-rm -rf $script_dir
 
 echo "Done!"

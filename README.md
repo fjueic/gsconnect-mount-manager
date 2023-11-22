@@ -1,9 +1,23 @@
+## Table of contents
+- [gsconnect-mount-manager](#gsconnect-mount-manager)
+- [Issue this project solves:](#issue-this-project-solves)
+- [Working example:](#working-example)
+- [Requirements:](#requirements)
+- [Installation:](#installation)
+- [Remove:](#remove)
+- [Update:](#update)
+- [Tested on:](#tested-on)
+- [Known issues:](#known-issues)
+- [TODO:](#todo)
+
 # gsconnect-mount-manager
 Extends the functionality of the gsconnect gnome extension to mount and unmount android phone's storage.
 
+# Issue this project solves:
+![error](./error.png)
+
 # Working example:
 ![example](./example.gif)
-
 
 
 # Requirements:
@@ -25,15 +39,21 @@ chmod +x enableService.sh
 ./enableService.sh
 ```
 
+# Remove:
+Reinstall the gsconnect extension.
 
 # Update:
-Reinstall the gsconnect extension. Follow Installation steps again.
+Reinstall the gsconnect extension and follow the installation steps again.
 
-
+# Tested on:
+- Arch Linux(Gnome)
+- Ubuntu
+- Manjaro
+- Garuda Linux
 
 # Known issues:
 - [ ] doesn't work if wifi and hotspot are both ON at the same time on your android phone. For now i don't plan to fix this issue because i don't need it.
-
+- [ ] Only if extension not installed as system extension. I add logic in future to check if extension is installed as system extension or not.
 
 # TODO:
 - [ ] i was unable to use gsettings because of some kind of schema issue and stackoverflow was not helpful. so i used dconf instead. i don't know if it is a good idea or not but it works. i will try to find a way to use gsettings.

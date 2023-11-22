@@ -8,6 +8,7 @@ Extends the functionality of the gsconnect gnome extension to mount and unmount 
 
 # Requirements:
 [dbus-python](https://archlinux.org/packages/extra/x86_64/dbus-python/)
+
 dconf (it most likely comes with your gnome installation)
 
 # Installation:

@@ -53,7 +53,8 @@ Reinstall the gsconnect extension and follow the installation steps again.
 
 # Known issues:
 - [ ] doesn't work if wifi and hotspot are both ON at the same time on your android phone. For now i don't plan to fix this issue because i don't need it.
-- [ ] Only if extension not installed as system extension. I add logic in future to check if extension is installed as system extension or not.
+
+- [ ] Works only if extension not installed as system extension. I will add logic in future to check if extension is installed as system extension or not.
 
 # TODO:
 - [ ] i was unable to use gsettings because of some kind of schema issue and stackoverflow was not helpful. so i used dconf instead. i don't know if it is a good idea or not but it works. i will try to find a way to use gsettings.

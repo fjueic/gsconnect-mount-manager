@@ -1,5 +1,7 @@
+# gsconnect-mount-manager
+
 ## Table of contents
-- [gsconnect-mount-manager](#gsconnect-mount-manager)
+- [Info](#Info)
 - [Issue this project solves:](#issue-this-project-solves)
 - [Working example:](#working-example)
 - [Requirements:](#requirements)
@@ -10,7 +12,7 @@
 - [Known issues:](#known-issues)
 - [TODO:](#todo)
 
-# gsconnect-mount-manager
+# Info:
 Extends the functionality of the gsconnect gnome extension to mount and unmount android phone's storage.
 
 # Issue this project solves:

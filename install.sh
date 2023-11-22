@@ -8,7 +8,8 @@ USER_HOME=$(getent passwd "$SUDO_USER" | cut -d: -f6)
 
 block_of_code="this block of code is not part of gsconnect connect extension"
 if grep -q "$block_of_code" "$USER_HOME/.local/share/gnome-shell/extensions/gsconnect@andyholmes.github.io/service/plugins/sftp.js"; then
-  echo "Reinstall gsconnect extension and try again"
+  echo "Patch is already applied"
+  echo "To Update, Reinstall gsconnect extension and Try Again"
   exit 1
 fi
 

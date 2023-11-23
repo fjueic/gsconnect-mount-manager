@@ -29,16 +29,13 @@ dconf (it most likely comes with your gnome installation)
 
 # Installation:
 1. clone the repo
-2. run `install.sh` as root
-3. run `enableService.sh` as regular user
+2. run `install.sh`
 
 ```bash
 git clone https://github.com/fjueic/gsconnect-mount-manager.git
 cd gsconnect-mount-manager
 chmod +x install.sh
 sudo ./install.sh
-chmod +x enableService.sh
-./enableService.sh
 ```
 
 # Remove:
@@ -57,7 +54,6 @@ Reinstall the gsconnect extension and follow the installation steps again.
 # Known issues:
 - [ ] doesn't work if wifi and hotspot are both ON at the same time on your android phone. For now i don't plan to fix this issue because i don't need it.
 
-- [ ] Works only if extension not installed as system extension. I will add logic in future to check if extension is installed as system extension or not.
 
 # TODO:
 - [ ] i was unable to use gsettings because of some kind of schema issue and stackoverflow was not helpful. so i used dconf instead. i don't know if it is a good idea or not but it works. i will try to find a way to use gsettings.

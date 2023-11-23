@@ -37,23 +37,30 @@ cd "$script_dir" || exit # Exit the script if cd doesn't work, prevents followin
 
 # putting files in place
 echo "Updating mountInfoHandler.js"
-cp -f ./mountInfoHandler.js "$extension_dir/utils/"
+sudo cp -f ./mountInfoHandler.js "$extension_dir/utils/" # Ah, screw it, sudo cp this file to home folder too
 mkdir -p "$USER_HOME/.config/gsconnect-mount-manager/" && cp -f ./run.py "$USER_HOME/.config/gsconnect-mount-manager/"
 [ -e /etc/systemd/user/gsconnect-mount-manager.service ] || sudo touch /etc/systemd/user/gsconnect-mount-manager.service
 
 # update service file
 # Change > to " | sudo tee " because shell doesn't have to permission to redirect to system file
+# redirecting to >/dev/null prevent the information from being put to stdout(Doesn't output the service file)
 # ( It would work if the whole script is run with sudo )
 echo "Creating a user systemd service"
 echo " "
-sudo ./update_servicefile.py "$USER_HOME" "$script_dir" | sudo tee /etc/systemd/user/gsconnect-mount-manager.service
+sudo ./update_servicefile.py "$USER_HOME" "$script_dir" | sudo tee /etc/systemd/user/gsconnect-mount-manager.service >/dev/null
 
 # editing sftp.js in gsconnect extension
 echo " "
 echo "Editing sftp.js in gsconnect extension"
-sudo ./update_sftp.py "$USER_HOME"
+sudo ./update_sftp.py "$USER_HOME" "$extension_dir"
 
-echo " "
+# enabling service
+echo "Enabling Custom gsconnect-mount-manager.service Now"
+systemctl --user daemon-reload
+systemctl --user enable gsconnect-mount-manager.service
+systemctl --user start gsconnect-mount-manager.service
+
+echo "============================================="
 echo "====================DONE!===================="
 echo "============================================="
-echo "Be Sure to run ./enableService.sh after this"
+echo " "

@@ -11,7 +11,7 @@ def change_sftp():
     # ~/.local/share/gnome-shell/extensions/gsconnect@andyholmes.github.io/service/plugins/sftp.js
     # extension_dir contains the home directory, so don't need to use os.path.join
     with open(
-        f"{extension_dir}/plugins/sftp.js')",
+        f"{extension_dir}/plugins/sftp.js",
         "r+",
     ) as f:
         data = f.read()

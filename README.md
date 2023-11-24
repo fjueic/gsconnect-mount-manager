@@ -46,7 +46,6 @@ Reinstall the gsconnect extension and follow the installation steps again.
 
 # Tested on:
 - Arch Linux(Gnome)
-- Ubuntu
 - Manjaro
 - Garuda Linux
 - Pop OS

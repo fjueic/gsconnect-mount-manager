@@ -1,8 +1,10 @@
-# check if root (Don't need it if the script is not run with sudo)
-# if [ "$EUID" -ne 0 ]; then
-#   echo "Please run as root"
-#   exit
-# fi
+
+# if root, exit
+if [ "$(id -u)" -eq 0 ]; then
+  echo -e "\e[91mPlease run this script as a normal user\e[0m"
+  exit 1
+fi
+
 
 # Get home directory of user
 if [ "$(id -u)" -eq 0 ]; then

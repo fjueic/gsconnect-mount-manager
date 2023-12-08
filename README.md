@@ -1,6 +1,6 @@
 # gsconnect-mount-manager
 
-# DON'T RUN INSTALL.SH AS ROOT USER
+# DON'T RUN `./install.sh` AS ROOT USER
 
 ## Table of contents
 - [Info](#Info)
@@ -33,7 +33,7 @@ dconf (it most likely comes with your gnome installation)
 1. clone the repo
 2. run `install.sh`
 
-# DON'T RUN INSTALL.SH AS ROOT USER
+# DON'T RUN `./install.sh` AS ROOT USER
 
 ```bash
 git clone https://github.com/fjueic/gsconnect-mount-manager.git

@@ -35,7 +35,7 @@ dconf (it most likely comes with your gnome installation)
 git clone https://github.com/fjueic/gsconnect-mount-manager.git
 cd gsconnect-mount-manager
 chmod +x install.sh
-sudo ./install.sh
+./install.sh
 ```
 
 # Remove:

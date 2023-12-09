@@ -45,6 +45,11 @@ chmod +x install.sh
 # Remove:
 Reinstall the gsconnect extension.
 
+```bash
+systemctl --user stop gsconnect-mount-manager.service
+systemctl --user disable gsconnect-mount-manager.service
+```
+
 # Update:
 Reinstall the gsconnect extension and follow the installation steps again.
 

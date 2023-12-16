@@ -59,7 +59,7 @@ Reinstall the gsconnect extension and follow the installation steps again.
 - Garuda Linux
 - Pop OS
 - Fedora
-
+- Ubuntu
 # Known issues:
 - [ ] doesn't work if wifi and hotspot are both ON at the same time on your android phone. For now i don't plan to fix this issue because i don't need it.
 

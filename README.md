@@ -1,7 +1,5 @@
 # gsconnect-mount-manager
 
-# DON'T RUN `./install.sh` AS ROOT USER
-
 ## Table of contents
 - [Info](#Info)
 - [Issue this project solves:](#issue-this-project-solves)

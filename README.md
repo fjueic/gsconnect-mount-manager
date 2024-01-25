@@ -10,7 +10,6 @@
 - [Update:](#update)
 - [Tested on:](#tested-on)
 - [Known issues:](#known-issues)
-- [TODO:](#todo)
 
 # Info:
 Extends the functionality of the gsconnect gnome extension to mount and unmount android phone's storage.

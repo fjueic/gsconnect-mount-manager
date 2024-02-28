@@ -17,6 +17,8 @@ Extends the functionality of the gsconnect gnome extension to mount and unmount 
 # Issue this project solves:
 ![error](./error.png)
 
+[Not able to access the mounted drive](https://github.com/GSConnect/gnome-shell-extension-gsconnect/issues/1610)
+
 # Working example:
 ![example](./example.gif)
 

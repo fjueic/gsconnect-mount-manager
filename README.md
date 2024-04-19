@@ -1,4 +1,5 @@
 # gsconnect-mount-manager
+#### Brief working explanation: [here](https://github.com/GSConnect/gnome-shell-extension-gsconnect/issues/1610#issuecomment-2040620269)
 
 ## Table of contents
 - [Info](#Info)

@@ -15,28 +15,10 @@ def change_sftp():
         "r+",
     ) as f:
         data = f.read()
-        data = addImports(data)
         data = addMountingLogic(data)
         data = addunMountingLogic(data)
         f.seek(0)
         f.write(data)
-
-
-def addImports(data):
-    lines = data.split("\n")
-    for i in range(len(lines)):
-        if "backends.lan" in lines[i]:
-            lines[i] = (
-                lines[i]
-                + """
-// this block of code is not part of gsconnect connect extension
-const MountHandler = imports.service.utils.mountInfoHandler;
-// end of block"""
-            )
-            break
-    data = "\n".join(lines)
-    return data
-
 
 def addMountingLogic(data):
     lines = data.split("\n")
@@ -45,15 +27,14 @@ def addMountingLogic(data):
             lines[
                 i
             ] = """              else{ // if script is editing the file, don't forget to place {} around else
-                    // this block of code is not part of gsconnect connect extension
-                    try{
-                        MountHandler.addInfoDconf(packet);
-                    }catch(e){
-                        pass
-                    }
-                    // end of block
-                    this._handleMount(packet);
-                }"""
+                        this._handleMount(packet);
+                        let temp = JSON.stringify(packet);
+                        let open = Gio.File.new_for_path(`${GLib.get_home_dir()}/.config/gsconnect-mount-manager/temp.json`);
+                        let out = open.replace(null, false, Gio.FileCreateFlags.NONE, null, null);
+                        out.write(temp, null);
+                        out.close(null);
+                        GLib.spawn_command_line_sync(`python ${GLib.get_home_dir()}/.config/gsconnect-mount-manager/mount.py add`)
+                    }"""
             lines[i + 1] = ""
             break
     data = "\n".join(lines)
@@ -69,7 +50,8 @@ def addunMountingLogic(data):
                 + """
         // this block of code is not part of gsconnect connect extension
         try{
-            MountHandler.removeBookmark(this._device._id + "/");
+            GLib.spawn_command_line_sync(`python ${GLib.get_home_dir()}/.config/gsconnect-mount-manager/mount.py remove ${this._device._id}/`)
+
         }catch(e){
             pass
         }

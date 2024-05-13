@@ -38,10 +38,10 @@ script_dir=$(dirname "$0")
 cd "$script_dir" || exit # Exit the script if cd doesn't work, prevents following commands from running
 
 # putting files in place
-echo "Updating mountInfoHandler.js"
-sudo cp -f ./mountInfoHandler.js "$extension_dir/utils/" # Ah, screw it, sudo cp this file to home folder too
-mkdir -p "$USER_HOME/.config/gsconnect-mount-manager/" && cp -f ./run.py "$USER_HOME/.config/gsconnect-mount-manager/"
+mkdir -p "$USER_HOME/.config/gsconnect-mount-manager/" && cp -f ./run.py "$USER_HOME/.config/gsconnect-mount-manager/" && cp -f ./mount.py "$USER_HOME/.config/gsconnect-mount-manager/"
+touch "$USER_HOME/.config/gsconnect-mount-manager/temp.json"
 [ -e /etc/systemd/user/gsconnect-mount-manager.service ] || sudo touch /etc/systemd/user/gsconnect-mount-manager.service
+
 
 # update service file
 # Change > to " | sudo tee " because shell doesn't have to permission to redirect to system file

@@ -33,7 +33,7 @@ def addMountingLogic(data):
                         let out = open.replace(null, false, Gio.FileCreateFlags.NONE, null, null);
                         out.write(temp, null);
                         out.close(null);
-                        GLib.spawn_command_line_sync(`python ${GLib.get_home_dir()}/.config/gsconnect-mount-manager/mount.py add`)
+                        GLib.spawn_command_line_sync(`python3 ${GLib.get_home_dir()}/.config/gsconnect-mount-manager/mount.py add`)
                     }"""
             lines[i + 1] = ""
             break
@@ -50,7 +50,7 @@ def addunMountingLogic(data):
                 + """
         // this block of code is not part of gsconnect connect extension
         try{
-            GLib.spawn_command_line_sync(`python ${GLib.get_home_dir()}/.config/gsconnect-mount-manager/mount.py remove ${this._device._id}/`)
+            GLib.spawn_command_line_sync(`python3 ${GLib.get_home_dir()}/.config/gsconnect-mount-manager/mount.py remove ${this._device._id}/`)
 
         }catch(e){
             pass

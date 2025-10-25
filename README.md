@@ -1,3 +1,6 @@
+##### Note:
+- I don't use gnome anymore but I will still maintain it.
+- Better check this [fork](https://github.com/vjaykrsna/gsconnect-mount-manager)
 # gsconnect-mount-manager
 #### Brief working explanation: [here](https://github.com/GSConnect/gnome-shell-extension-gsconnect/issues/1610#issuecomment-2040620269)
 
